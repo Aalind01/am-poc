@@ -1,10 +1,10 @@
-var channelName = 'TechGuyWeb';
+var channelId = 'UCafyxRv7ZULEC487nRaElZw';
 
 $(document).ready(function(){
     $.get(
         "https://www.googleapis.com/youtube/v3/channels", {
             part: 'contentDetails',
-            forUsername: channelName,
+            id: channelId,
             key: 'AIzaSyAksqndsJ-IizEeldUx3CH-4PsQ5hLzLEg'
         },
         function (data){
