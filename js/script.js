@@ -9,7 +9,6 @@ $(document).ready(function(){
         },
         function (data){
             $.each( data.items, function(idx, item){
-                console.log(item);
                 pid = item.contentDetails.relatedPlaylists.uploads;
                 getVids(pid);
             })
@@ -27,10 +26,9 @@ $(document).ready(function(){
             function (data){
                 var output;
                 $.each( data.items, function(idx, item){
-                    console.log(item);
                     videoTitle = item.snippet.title;
                     videoId = item.snippet.resourceId.videoId;
-                    output = '<li><iframe src=\"//www.youtube.com/embed/'+videoId+'\'"></iframe></li>';
+                    output = '<li><iframe src="//www.youtube.com/embed/'+videoId+'"></iframe></li>';
                     $('#results').append(output);
                 })
             }
