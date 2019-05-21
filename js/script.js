@@ -1,4 +1,4 @@
-var channelName = 'TechGuyWeb';
+var channelName = 'AcadeMedia';
 
 $(document).ready(function(){
     $.get(
@@ -19,7 +19,7 @@ $(document).ready(function(){
         $.get(
             "https://www.googleapis.com/youtube/v3/playlistItems", {
                 part: 'snippet',
-                maxResults: 10,
+                maxResults: 4,
                 playlistId: pid,
                 key: 'AIzaSyAksqndsJ-IizEeldUx3CH-4PsQ5hLzLEg'
             },
