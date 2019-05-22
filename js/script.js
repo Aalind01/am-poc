@@ -52,7 +52,7 @@ $(document).ready(function(){
             // user_id: '1694546717',
             // tag_name: 'awesome',
             // client_id: '5ddc1e769f6145e7a2a25ba5ad4df854',
-            access_token: '1694546717.1677ed0.18df0bbaa4ef4f92b440d84c68f28c42'
+            access_token: '3290694562.bcc2598.31295cff56a548529d921216a73d6c46'
         }, 
         function(response){
             console.log(response);
