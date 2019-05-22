@@ -34,4 +34,36 @@ $(document).ready(function(){
             }
         )  
     }
+
+    /*******************Alternate solution for instagram feeds. This will be depricated by 2020 from instagram */
+    // var feed = new Instafeed({
+    //     get: 'user',
+    //     userId: '1694546717',
+    //     tagName: 'awesome',
+    //     clientId: '5ddc1e769f6145e7a2a25ba5ad4df854',
+    //     accessToken: '1694546717.1677ed0.18df0bbaa4ef4f92b440d84c68f28c42'
+    // });
+    // feed.run();
+
+    /***************Inhouse solution, which we can change according to our needs */
+    $.get(
+        "https://api.instagram.com/v1/users/self/media/recent/", {
+            // get: 'user',
+            // user_id: '1694546717',
+            // tag_name: 'awesome',
+            // client_id: '5ddc1e769f6145e7a2a25ba5ad4df854',
+            access_token: '1694546717.1677ed0.18df0bbaa4ef4f92b440d84c68f28c42'
+        }, 
+        function(response){
+            console.log(response);
+
+            var output;
+            $.each( response.data, function(idx, item){
+                imageSrc = item.images.low_resolution.url;
+                imageAlt = item.caption ? item.caption.text : 'Insta image'+idx;
+                output = '<li><img src="'+imageSrc+'" alt="'+imageAlt+'"/></li>';
+                $('#instafeed').append(output);
+            })
+        }
+    );
 });
